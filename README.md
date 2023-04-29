@@ -26,3 +26,13 @@
 - Iterating a map
 - Differences between maps and objects
 - Difference of Maps and WeakMaps
+
+##### Typed Arrays
+
+- Restricted data types
+- Binary data
+- Faster processing
+- Once in view, acts like array
+- Woriking with Native APIs
+- Using views with buffers
+- Multiple views on the same data

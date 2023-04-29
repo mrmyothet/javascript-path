@@ -1,19 +1,28 @@
 # javascript-path
 
-### Arrays and Collections 
+### Arrays and Collections
 
-##### Arrays 
-* Array.of
-* Spread operator 
-* Array.find 
-* Array.fill
-* Iterating arrays 
-* using Chart.js
+##### Arrays
+
+- Array.of
+- Spread operator
+- Array.find
+- Array.fill
+- Iterating arrays
+- using Chart.js
 
 ##### Sets
-* Data Collections 
-* Sets
-* Adding/Removing values 
-* Iterating sets
-* Differences between Sets and WeakSets 
-* WeakSets 
+
+- Data Collections
+- Sets
+- Adding/Removing values
+- Iterating sets
+- Differences between Sets and WeakSets
+- WeakSets
+
+##### Maps
+
+- Adding/Removing values
+- Iterating a map
+- Differences between maps and objects
+- Difference of Maps and WeakMaps

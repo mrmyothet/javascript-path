@@ -13,6 +13,21 @@ var yearlyTotal = 0;
 
 const monthlySales = new Map();
 
+{
+    let salesA = {
+        a: [1, 2]
+    }
+
+    var map = new WeakMap();
+    map.set(salesA, 'Hiking');      // key of the WeakMap must be object 
+    console.log('First '+ salesA);  // this line will work 
+}
+// console.log('Second '+ salesA);  // this line will not work because of garbage collected 
+
+// if we create a Map, we can see the object inside it
+// if we create WeakMap we cannot see object inside it  
+console.log(map);
+
 // Add Sales
 function addSale(){
     monthlySales.set(newMonth.value, parseInt(newAmount.value));

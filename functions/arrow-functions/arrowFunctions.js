@@ -27,5 +27,6 @@ console.log(message);
 // };
 
 let greeting = () => 'Hello World';
+
 message = greeting();
 console.log(message);

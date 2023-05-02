@@ -8,4 +8,4 @@ console.log(message);
 // Arrow Function
 let greetings = (name) => 'Hello ' + name;
 message = greetings('John');
-console.log(message);
+console.log(message); // Hello John

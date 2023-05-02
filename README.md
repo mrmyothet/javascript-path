@@ -1,6 +1,6 @@
 # javascript-path
 
-### Arrays and Collections
+### [JavaScript Arrays and Collections by Jeff Batt](https://app.pluralsight.com/library/courses/javascript-arrays-collections/table-of-contents)
 
 ##### Arrays
 
@@ -36,3 +36,22 @@
 - Woriking with Native APIs
 - Using views with buffers
 - Multiple views on the same data
+
+### [JavaScript: Functions by Prateek Parekh](https://app.pluralsight.com/library/courses/javascript-functions/table-of-contents)
+
+##### Writing Modular Code with Functions
+
+- Function
+- Arguments
+- Function Scope
+- Block Scope
+- Immediately Invoked Function Expressing (IIFE)
+- Closures
+
+##### Improving Readability with Arrow Functions
+
+- Arrow Functions
+- Behavior of Arrow Functions
+- Behavior of **this** keyword
+
+##### Changing Function Context and Built-in Functions

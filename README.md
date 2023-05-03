@@ -55,3 +55,13 @@
 - Behavior of **this** keyword
 
 ##### Changing Function Context and Built-in Functions
+
+- apply and call
+- bind
+- Built-in functions
+
+##### Constructing Rest Parameters and the Spread Operator
+
+- Setting Default Parameters
+- Defining Rest Parameters
+- Using Spread Operator

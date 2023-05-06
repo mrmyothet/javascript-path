@@ -39,5 +39,19 @@ display(counterResults());
 display(counterResults());
 display(counterResults());
 
-// Redux
-// Redux is a real-world example, that uses functional programming paradigms and pure functions
+/* A real-world example of Functional Programming 
+
+Redux is a real-world example, that uses functional programming paradigms and pure functions
+
+Reducers in Redux
+It takes in an old state and action and brews a new state!
+
+function(state, action) => newState
+
+Reducers are like coffee makers
+coffee powder + water = Fresh cup of coffee 
+
+Functions that take in current state (coffee powder) and actions (water) and 
+brew a new state (fresh cup of coffee)
+
+*/

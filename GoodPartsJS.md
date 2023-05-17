@@ -15,3 +15,64 @@
 - Constructor functions should be named with InitialCaps, nothing else should be named with InitialCaps
 - JSLint defines a professional subset of JavaScript
 - WARNING! JSLint will hurt your feelings
+
+##### Chapter 2 - And Then There was JavaScriipt
+
+- ECMAScript
+  - 1999 - ES3
+  - 2009 - ES5
+  - 2015 - ES6
+- Where do Bad Parts come from?
+  - Legacy
+  - Good Intentions
+  - Haste
+- Objects
+  - An object is a dynamic collection of properties
+  - [keys] must be strings - automatic type coercion
+  - Object literals
+  - Prototypal Inheritance
+- Number
+  - Decimal fractions are approximate
+  - Numbers are first class objects
+  - Math object
+  - NaN - NaN is not equal to anything, including NaN
+  - Number.MAX_VALUE
+- Strings
+  - Strings are immutable
+  - Use " for external strngs
+  - Use ' for internal strings and characters
+  - Convert a string to a number
+    - Use Number function
+    - Use `+` prefix operator
+    - ParseInt - The radix (10) should always be used
+- Arrays
+  - sort - will sort by alphabetical order
+  - Arrays vs Objects
+    - Use objects when the name are arbitrary
+    - Use arrays when the names are sequential integers
+- All values are objects - Except null and undefined
+- undefined
+  - The default value for variables and parameters
+  - The value of missing members in objects and arrays
+- Use `undefined` instead of `null`, because JS language use `undefined`
+- Boolean
+  - `Falsy` values
+    - false
+    - null
+    - undefined
+    - "" (empty string)
+    - 0
+    - NaN
+  - All other values are `truthy`
+  - All values can be said to be boolish
+- `&&` - logical and - If first operand is `truthy` then result is second operand, else result is first operand
+- `||` - logical or - If first operand is `truthy` then result is first operand, else result is second operand
+- `!` - logical not - If the operand is truthy, result is false, otherwise result is true
+- `!!` produces booleans
+- `for` loop
+  - Use `forEach` or `map` method instead
+- `For in`
+  - Use Object.keys instead
+- `Switch` statements
+  - The switch values does not need to a number. It can be a string.
+  - The case values can be expressions

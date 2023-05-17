@@ -76,3 +76,29 @@
 - `Switch` statements
   - The switch values does not need to a number. It can be a string.
   - The case values can be expressions
+
+##### Chapter 3 - Function the Ultimate
+
+- Two pseudo parameters
+  - arguments
+  - this
+  - Neither is recommended
+- this
+  - `this` parameter contains a reference to the object of invocation
+  - `this` allows a method to know what object it is concerned with
+  - `this` allows a single function object to service many objects
+  - `this` is key to prototypal inheritance
+- Invocation - There are four ways to call a function:
+  - Function form
+    - functionObject(arguments)
+  - Method form
+    - thisObject.methodName(arguments)
+  - Constructor form
+    - new FunctionObject(arguments)
+  - Apply form
+    - functionObject.apply(thisObject, [arguments])
+- Closure
+  - The context of an inner function includes the scope of the outer function
+  - An inner function enjoys that context even after the parent functions have returned
+  - Function scope works like block scope
+- Module Pattern is easily transformed into a powerful constructor pattern

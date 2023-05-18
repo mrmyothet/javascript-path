@@ -102,3 +102,29 @@
   - An inner function enjoys that context even after the parent functions have returned
   - Function scope works like block scope
 - Module Pattern is easily transformed into a powerful constructor pattern
+
+##### Chapter 4 - The Metamorphosis of AJAX
+
+- Browser
+  - URL -> `Fetch` -> Cache -> `Parse` -> Tree -> `Flow` -> Display List -> `Paint` -> Pixels
+- Scripted Browser
+  - `Flow` -> `Paint` -> `Event` -> `Script` -> `Flow again`
+- DOM is massively inefficient
+- The browser has an event-driven, single-threaded programming model
+- Trickling and Bubbling
+- Performance
+  - Toching a node has a cost
+  - Styling can have a big cost
+  - Reflow can have a big cost
+  - Repaint can have a big cost
+  - Random things like nodelist can have a big cost
+- In most applications, JavaScript has a small cost
+- Optimization without good performance data is a waste of time
+- Ajax libraries are fun and easy to make.
+- How to choose? - Subject all of the candidates to JSLint
+- Pendulum of Despair
+  - Server oriented - The browser is a terminal
+  - Browser oriented - The server is a file system
+  - Seek the middle way
+  - A plesant dialogue between specilized peers.
+  - Minimize the volume of traffic

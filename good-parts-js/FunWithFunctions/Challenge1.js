@@ -18,6 +18,7 @@ function funky(o) {
 var x = [];
 funky(x);
 console.log(x);
+
 /*
 A. null
 B. []
@@ -59,12 +60,15 @@ console.log(sub(3, 4));
 console.log(mul(3, 4));
 
 /*
+
 Write a function identityf 
 that takes an argument and returns a function that returns that argument 
 
 var three = identityf(3);
 three() //3
+
 */
+
 function identityf(value) {
   return function () {
     return value;
@@ -74,9 +78,12 @@ let three = identityf(3);
 console.log('three()', three());
 
 /*
+
 Write a function addf that adds from two invocations.
 addf(3)(4) // 7
+
 */
+
 function addf(first) {
   return function (second) {
     return first + second;
@@ -85,13 +92,16 @@ function addf(first) {
 console.log('addf(3)(4)', addf(3)(4));
 
 /*
+
 Write a function liftf 
 that takes a binary function, and makes it callable with two invocations 
 
 var addf = liftf(add);
 addf(3)(4) // 7
 liftf(mul)(5)(6)  // 7
+
 */
+
 function liftf(binary) {
   return function (first) {
     return function (second) {
@@ -108,11 +118,13 @@ console.log('liftf(mul)(5)(6)', liftf(mul)(5)(6));
 // Challenge 2
 
 /*
+
 Write a function curry that takes a binary function and an argument, 
 and returns a function that can take a second argument 
 var add3 = curry(add, 3);
 add3(4) // 7
 curry(mul, 5)(6) // 30
+
 */
 
 function curry(binary, first) {
@@ -130,6 +142,7 @@ console.log('add3(4)', add3(4));
 console.log('curry(mul, 5)(6)', curry(mul, 5)(6));
 
 /*
+
 function currying(func) {
   var slice = Array.prototype.slice,
     args = slice.call(arguments, 1);
@@ -146,11 +159,13 @@ function currying(func, ...first) {
 */
 
 /*
+
 Without writing any new functions, 
 show three ways to create inc function 
 var inc = ___;
 inc(5)  // 6
 inc(inc(5)) // 7
+
 */
 
 var inc = addf(1);
@@ -161,13 +176,16 @@ console.log('inc(5)', inc(5));
 console.log('inc(inc(5))', inc(inc(5)));
 
 /* 
+
 first rule of functional programming 
 let the functions do the work. 
 If you've already written a function that does what you need 
 You don't need to write another one.
+
 */
 
 /*
+
 Write a function twice that takes a binary function and returns a 
 unary function that passes its argument to the binary function twice
 add(11,11) // 22
@@ -175,7 +193,9 @@ var doubl = twice(add);
 doubl(11) // 22
 var square = twice(mul);
 square(11) // 121
+
 */
+
 function twice(binary) {
   return function (value) {
     return binary(value, value);
@@ -189,9 +209,11 @@ var square = twice(mul);
 console.log('square(11)', square(11));
 
 /*
+
 Write reverse, a function that reverses the arguments of a binary function.
 var bus = reverse(sub);
 bus(3, 2) // -1
+
 */
 
 function reverse(binary) {
@@ -201,20 +223,24 @@ function reverse(binary) {
 }
 
 /*
+
 function reverse(func) {
   return function (...args) {
     return func(...args.reverse());
   };
 }
+
 */
 
 var bus = reverse(sub);
 console.log('bus(3, 2)', bus(3, 2));
 
 /*
+
 Write a function composeu that takes two unary functions and 
 returns a unary function that calls them both
 composeu(doubl, square)(5)  // 100
+
 */
 function composeu(f, g) {
   return function (x) {
@@ -224,9 +250,11 @@ function composeu(f, g) {
 console.log('composeu(doubl, square)(5)', composeu(doubl, square)(5));
 
 /*
+
 Write a function composeb that takes two binary functions and 
 returns a function that calls them both.
 composeb(add, mul)(2,3,7) // 35
+
 */
 function composeb(f, g) {
   return function (a, b, c) {
@@ -236,11 +264,13 @@ function composeb(f, g) {
 console.log('composeb(add, mul)(2,3,7)', composeb(add, mul)(2, 3, 7));
 
 /*
+
 Write a limit function that allows a binary function 
 to be called a limited number of times.
 var add_ltd = limit(add, 1);
 add_ltd(3, 4) // 7
 add_ltd(3, 5) // undefined 
+
 */
 
 function limit(f, times) {
@@ -256,6 +286,7 @@ function limit(f, times) {
 }
 
 /*
+
 function limit(binary, count) {
   return function (a, b) {
     if (count >= 1) {
@@ -265,6 +296,7 @@ function limit(binary, count) {
     return undefined;
   };
 }
+
 */
 
 let add_ltd = limit(add, 2);
@@ -272,12 +304,15 @@ console.log('add_ltd(3, 4)', add_ltd(3, 4));
 console.log('add_ltd(3, 5)', add_ltd(3, 5));
 console.log('add_ltd(3, 6)', add_ltd(3, 5));
 
-/* Write a from function that produces a generator 
+/* 
+
+Write a from function that produces a generator 
 that will produce a series of values 
 var index = from(0);
 index() // 0
 index() // 1
 index() // 2
+
 */
 
 function from(x) {
@@ -288,6 +323,7 @@ function from(x) {
 }
 
 /*
+
 function from(start) {
   return function () {
     var next = start;
@@ -295,6 +331,7 @@ function from(start) {
     return next;
   };
 }
+
 */
 
 let index = from(0);
@@ -304,12 +341,14 @@ console.log('index()', index());
 console.log('index()', index());
 
 /*
+
 Write a to function that takes a generator and an end value, 
 and returns a generator that will produce numbers up to that limit
 var index = to(from(1), 3);
 index() // 1
 index() // 2
 index() // undefined 
+
 */
 
 function to(f, limit) {
@@ -322,6 +361,7 @@ function to(f, limit) {
 }
 
 /*
+
 function to(gen, end) {
   return function () {
     var value = gen();
@@ -331,6 +371,7 @@ function to(gen, end) {
     return undefined;
   };
 }
+
 */
 
 index = to(from(1), 3);
@@ -416,7 +457,8 @@ console.log('ele()', ele());
 
 /*
 Modify the element function so that the generator argument is optional. 
-If a generator is not provided, then each of the elements of the array will be produced.
+If a generator is not provided, 
+then each of the elements of the array will be produced.
 var ele = element(array);
 ele() // 'a'
 ele() // 'b'
@@ -468,3 +510,147 @@ console.log('ele()', ele());
 console.log('ele()', ele());
 console.log('ele()', ele());
 console.log('ele()', ele());
+
+/*
+
+Write a collect function that takes a generator and an array and 
+produces a function that will collect the results in the array.
+var array = [], 
+  col = collect(fromTo(0,2), array);
+col() // 0
+col() // 1
+col() // undefined 
+array // [0, 1]
+
+*/
+function collect(gen, array) {
+  return function () {
+    let value = gen();
+    if (value !== undefined) {
+      array.push(value);
+    }
+    return value;
+  };
+}
+
+console.log('collect(fromTo(0, 2), array');
+var array = [],
+  col = collect(fromTo(0, 2), array);
+col();
+col();
+col();
+console.log(array);
+
+/*
+
+Write a filter function that takes a generator and a predicate and 
+produces a generator that produces only the values approved by the predicate. 
+
+var fil = filter(fromTo(0, 5), function third(value) {
+  return value % 3 === 0;
+});
+fil() // 0
+fil() // 3
+fil() // undefined 
+
+*/
+
+function filter(gen, predicate) {
+  return function () {
+    var value;
+    do {
+      value = gen();
+    } while (value !== undefined && !predicate(value));
+    return value;
+  };
+}
+
+// ES6
+function filter(gen, predicate) {
+  return function recur() {
+    var value = gen();
+    if (value === undefined || predicate(value)) {
+      return value;
+    }
+    return recur();
+  };
+}
+
+var fil = filter(fromTo(0, 5), function third(value) {
+  return value % 3 === 0;
+});
+
+console.log('filter(fromTo(0, 5), predicate');
+console.log(fil());
+console.log(fil());
+console.log(fil());
+
+/*
+
+Write a concat function that takes two generators and 
+produces a genertor that combines the sequences.
+
+var con = concat(fromTo(0, 3), fromTo(0, 2));
+con();  // 0
+con();  // 1
+con();  // 2
+con();  // 0
+con();  // 1
+con();  // undefined
+
+*/
+
+function concat(gen1, gen2) {
+  return function () {
+    var value = gen1();
+    if (value === undefined) {
+      return gen2();
+    }
+    return value;
+  };
+}
+
+/*
+
+function concat(gen1, gen2) {
+  var gen = gen1;
+  return function () {
+    var value = gen();
+    if (value !== undefined) {
+      return value;
+    }
+    gen = gen2;
+    return gen();
+  };
+}
+
+*/
+
+/* 
+
+function concat(...gens) {
+  var next = element(gens),
+    gen = next();
+  return function recur() {
+    var value = gen();
+    if (value === undefined) {
+      gen = next();
+      if (gen !== undefined) {
+        return recur();
+      }
+    }
+    return value;
+  };
+}
+
+*/
+
+var con = concat(fromTo(0, 3), fromTo(0, 2));
+
+console.log('concat(fromTo(0, 3), fromTo(0, 2))');
+console.log('con() ', con());
+console.log('con() ', con());
+console.log('con() ', con());
+console.log('con() ', con());
+console.log('con() ', con());
+console.log('con() ', con());
